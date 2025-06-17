@@ -76,16 +76,6 @@ export const Navigation = ({
                   <Filter className="w-4 h-4" />
                 </Button>
               )}
-              {currentView === "stats" && onDetailedStats && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={onDetailedStats}
-                  className="hover:bg-pink-50 text-pink-600 text-xs"
-                >
-                  View Details
-                </Button>
-              )}
             </div>
           </div>
         </div>
