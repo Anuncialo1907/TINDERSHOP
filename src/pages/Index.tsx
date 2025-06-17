@@ -209,7 +209,6 @@ const Index = () => {
   const [hasSeenAllProducts, setHasSeenAllProducts] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { addInteraction, getTotalStats, stats } = useProductStats();
   const {
     addToCart,
     addToFavorites,
