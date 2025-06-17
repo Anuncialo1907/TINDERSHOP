@@ -354,7 +354,6 @@ const Index = () => {
         onFilterToggle={() => setIsFilterOpen(true)}
         cartItemCount={getCartItemCount()}
         favoritesCount={favorites.length}
-        onDetailedStats={() => setCurrentView("detailed-stats")}
       />
 
       {/* Cart and Favorites Functional Indicators */}
