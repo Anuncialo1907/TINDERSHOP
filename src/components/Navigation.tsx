@@ -25,7 +25,6 @@ export const Navigation = ({
   onFilterToggle,
   cartItemCount = 0,
   favoritesCount = 0,
-  onDetailedStats,
 }: NavigationProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
