@@ -13,6 +13,7 @@ import { FilterPanel } from "@/components/FilterPanel";
 import { Navigation } from "@/components/Navigation";
 import { CartPage } from "@/components/CartPage";
 import { FavoritesPage } from "@/components/FavoritesPage";
+import { useProductStats } from "@/hooks/useProductStats";
 import { useCartAndFavorites } from "@/hooks/useCartAndFavorites";
 import { Product, FilterOptions, SwipeDirection } from "@/lib/types";
 import { mockProducts } from "@/lib/mockData";
