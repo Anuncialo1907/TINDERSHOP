@@ -11,11 +11,8 @@ import {
 import { ProductCard } from "@/components/ProductCard";
 import { FilterPanel } from "@/components/FilterPanel";
 import { Navigation } from "@/components/Navigation";
-import { StatsPage } from "@/components/StatsPage";
-import { DetailedStatsPage } from "@/components/DetailedStatsPage";
 import { CartPage } from "@/components/CartPage";
 import { FavoritesPage } from "@/components/FavoritesPage";
-import { useProductStats } from "@/hooks/useProductStats";
 import { useCartAndFavorites } from "@/hooks/useCartAndFavorites";
 import { Product, FilterOptions, SwipeDirection } from "@/lib/types";
 import { mockProducts } from "@/lib/mockData";
