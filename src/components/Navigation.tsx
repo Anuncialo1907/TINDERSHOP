@@ -28,7 +28,9 @@ export const Navigation = ({
 }: NavigationProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const handleViewChange = (view: "discover" | "stats" | "filters") => {
+  const handleViewChange = (
+    view: "discover" | "cart" | "favorites" | "filters",
+  ) => {
     if (view === currentView) return;
 
     setIsAnimating(true);
