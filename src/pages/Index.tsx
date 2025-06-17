@@ -273,7 +273,6 @@ const Index = () => {
         return;
     }
 
-    addInteraction(currentProduct.id, action);
     setCurrentImageIndex(0); // Reset image index for next product
     setCurrentProductIndex((prev) => {
       const newIndex = prev + 1;
