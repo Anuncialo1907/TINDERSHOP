@@ -194,7 +194,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 const Index = () => {
   const [currentView, setCurrentView] = useState<
-    "discover" | "stats" | "detailed-stats"
+    "discover" | "cart" | "favorites"
   >("discover");
   const [products, setProducts] = useState<Product[]>([]);
   const [shuffledProducts] = useState<Product[]>(() =>
