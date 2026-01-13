@@ -1,9 +1,44 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ProductStats, UserInteraction } from "@/lib/types";
 
+const STATS_STORAGE_KEY = "swipeshop_stats";
+const INTERACTIONS_STORAGE_KEY = "swipeshop_interactions";
+
+// Helper functions for localStorage
+const saveToStorage = (key: string, data: any) => {
+  try {
+    localStorage.setItem(key, JSON.stringify(data));
+  } catch (error) {
+    console.warn("Failed to save to localStorage:", error);
+  }
+};
+
+const loadFromStorage = <T>(key: string, defaultValue: T): T => {
+  try {
+    const item = localStorage.getItem(key);
+    return item ? JSON.parse(item) : defaultValue;
+  } catch (error) {
+    console.warn("Failed to load from localStorage:", error);
+    return defaultValue;
+  }
+};
+
 export const useProductStats = () => {
-  const [stats, setStats] = useState<ProductStats[]>([]);
-  const [interactions, setInteractions] = useState<UserInteraction[]>([]);
+  const [stats, setStats] = useState<ProductStats[]>(() =>
+    loadFromStorage(STATS_STORAGE_KEY, []),
+  );
+  const [interactions, setInteractions] = useState<UserInteraction[]>(() =>
+    loadFromStorage(INTERACTIONS_STORAGE_KEY, []),
+  );
+
+  // Save to localStorage whenever stats or interactions change
+  useEffect(() => {
+    saveToStorage(STATS_STORAGE_KEY, stats);
+  }, [stats]);
+
+  useEffect(() => {
+    saveToStorage(INTERACTIONS_STORAGE_KEY, interactions);
+  }, [interactions]);
 
   const addInteraction = useCallback(
     (productId: string, action: "like" | "dislike" | "Love It") => {
